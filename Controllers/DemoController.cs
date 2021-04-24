@@ -26,7 +26,7 @@ namespace WebAppDemo.Controllers
             var response = await client.GetAsync(url);
             var text = await response.Content.ReadAsStringAsync();
 
-            return new OkObjectResult("hello world!");
+            return new OkObjectResult(text);
         }
 
     }
