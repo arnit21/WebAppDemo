@@ -14,7 +14,7 @@ namespace WebAppDemo.Controllers
     [ApiController]
     public class DemoController : ControllerBase
     {
-        private readonly string url = "<function_url>";
+        private readonly string url = "https://shob-func-demo.azurewebsites.net/api/HttpTrigger1?code=eF299IjOSwKYU7evA0DTgDwNdmlc78EmDujIv1syaxafoIpQafzWGw==";
 
         public DemoController()
         {}
@@ -22,9 +22,9 @@ namespace WebAppDemo.Controllers
         [HttpGet]
         public async Task<ActionResult<string>> Get()
         {
-            //HttpClient client = new HttpClient();
-            //var response = await client.GetAsync(url);
-            //var text = await response.Content.ReadAsStringAsync();
+            HttpClient client = new HttpClient();
+            var response = await client.GetAsync(url);
+            var text = await response.Content.ReadAsStringAsync();
 
             return new OkObjectResult("hello world!");
         }
